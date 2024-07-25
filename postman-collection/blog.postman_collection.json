@@ -1,0 +1,678 @@
+{
+	"info": {
+		"_postman_id": "49bb133b-ef08-47a7-9f52-7c03358ab501",
+		"name": "blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23360694"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"deep\",\r\n    \"email\": \"deep@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}user/register",
+					"host": [
+						"{{host}}user"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"deep\",\r\n    \"email\": \"deep@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}user/register",
+							"host": [
+								"{{host}}user"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "107"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6b-rmacxO1rS05mhN97F76dhqTwthE\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 01:51:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"acknowledged\": true,\n        \"insertedId\": \"66a1af974bb2e8859bc30c39\"\n    },\n    \"message\": \"Successfully registered!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{host}}user/login",
+					"host": [
+						"{{host}}user"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"deep@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}user/login",
+							"host": [
+								"{{host}}user"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "734"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2de-1OH3+XRhJWE05iME5TVparsHDF4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 01:54:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Logged in success!\",\n    \"data\": {\n        \"user\": {\n            \"_id\": \"66a1af974bb2e8859bc30c39\",\n            \"name\": \"deep\",\n            \"email\": \"deep@gmail.com\",\n            \"createdAt\": \"2024-07-25T01:51:19.334Z\",\n            \"lastLogin\": \"2024-07-25T01:53:25.526Z\"\n        },\n        \"token\": {\n            \"jti\": \"a8927dd6-c55d-4486-87be-a7a844cc990f\",\n            \"token\": \"eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjY2YTFhZjk3NGJiMmU4ODU5YmMzMGMzOSIsIm5hbWUiOiJkZWVwIiwiZW1haWwiOiJkZWVwQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjQtMDctMjVUMDE6NTE6MTkuMzM0WiIsImxhc3RMb2dpbiI6IjIwMjQtMDctMjVUMDE6NTM6MjUuNTI2WiJ9LCJpYXQiOjE3MjE4NzI0NjIsImV4cCI6MTcyMTk1ODg2MiwiaXNzIjoiIiwianRpIjoiYTg5MjdkZDYtYzU1ZC00NDg2LTg3YmUtYTdhODQ0Y2M5OTBmIn0.gPADEtvSltdKHcpyVcdFUY0vh-SoJiKZHFpJEQSvwQtM2_45SNu9_BMGMCg-2OWSaE55i9JevTFdtnx9xzzetg\"\n        },\n        \"login\": true\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "blog create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjY2YTFhZjk3NGJiMmU4ODU5YmMzMGMzOSIsIm5hbWUiOiJkZWVwIiwiZW1haWwiOiJkZWVwQGdtYWlsLmNvbSIsImNyZWF0ZWRBdCI6IjIwMjQtMDctMjVUMDE6NTE6MTkuMzM0WiIsImxhc3RMb2dpbiI6IjIwMjQtMDctMjVUMDU6MTQ6MjkuMjg0WiJ9LCJpYXQiOjE3MjE4ODQ1MTYsImV4cCI6MTcyMTk3MDkxNiwiaXNzIjoiIiwianRpIjoiMzQ4MzkxMmMtNzNmMi00ZjM0LWJkMmUtNTM4Y2NlNmZmNWI2In0.non3JfPfKFasNv0kJhJyc87lBvslq4T6HqKbow3j3p6S6yMr3rUbOCH1X8AqBeozbcjcyWQ2JOFP3gvw4Rkocw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"My First Blog\",\r\n    \"description\": \"HTML GOES Here\",\r\n    \"imageLink\": \"public/image/66a1b6821b4f6bb7b0e38f0eimage.jpg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}blog/create",
+					"host": [
+						"{{host}}blog"
+					],
+					"path": [
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"My First Blog\",\r\n    \"description\": \"HTML GOES Here\",\r\n    \"imageLink\": \"public/image/66a1b6821b4f6bb7b0e38f0eimage.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}blog/create",
+							"host": [
+								"{{host}}blog"
+							],
+							"path": [
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "101"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"65-Y6ixoD14jT32lqD6Cocxqdi3SBU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 02:25:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Logged in success!\",\n    \"data\": {\n        \"acknowledged\": true,\n        \"insertedId\": \"66a1b7b56fd07a4d537afdc4\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "blog list",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}blog/list",
+					"host": [
+						"{{host}}blog"
+					],
+					"path": [
+						"list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "blog list",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}blog/list",
+							"host": [
+								"{{host}}blog"
+							],
+							"path": [
+								"list"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f0-+MTqEpARaStfreVk29uxGMtzeVs\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 02:35:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"successfully list blog!\",\n    \"data\": [\n        {\n            \"_id\": \"66a1b7b56fd07a4d537afdc4\",\n            \"description\": \"HTML GOES Here\",\n            \"title\": \"My First Blog deep\",\n            \"postTime\": \"2024-07-25T02:30:09.656Z\",\n            \"imageLink\": \"public/image/66a1b6821b4f6bb7b0e38f0eimage.jpg\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "blog",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}blog?postId=66a1b7b56fd07a4d537afdc4",
+					"host": [
+						"{{host}}blog"
+					],
+					"query": [
+						{
+							"key": "postId",
+							"value": "66a1b7b56fd07a4d537afdc4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "blog",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}blog?postId=66a1b7b56fd07a4d537afdc4",
+							"host": [
+								"{{host}}blog"
+							],
+							"query": [
+								{
+									"key": "postId",
+									"value": "66a1b7b56fd07a4d537afdc4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "226"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e2-QMU4xldu6wAPHM2YKnJPzJTZZ9U\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 02:36:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"successful!\",\n    \"data\": {\n        \"_id\": \"66a1b7b56fd07a4d537afdc4\",\n        \"description\": \"HTML GOES Here\",\n        \"title\": \"My First Blog deep\",\n        \"postTime\": \"2024-07-25T02:30:09.656Z\",\n        \"imageLink\": \"public/image/66a1b6821b4f6bb7b0e38f0eimage.jpg\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "blog edit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"My First Blog deep\",\r\n    \"description\": \"HTML GOES Here\",\r\n    \"imageLink\": \"public/image/66a1b6821b4f6bb7b0e38f0eimage.jpg\",\r\n    \"postId\": \"66a1b7b56fd07a4d537afdc4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}blog/update",
+					"host": [
+						"{{host}}blog"
+					],
+					"path": [
+						"update"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "blog edit",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"My First Blog deep\",\r\n    \"description\": \"HTML GOES Here\",\r\n    \"imageLink\": \"public/image/66a1b6821b4f6bb7b0e38f0eimage.jpg\",\r\n    \"postId\": \"66a1b7b56fd07a4d537afdc4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}blog/update",
+							"host": [
+								"{{host}}blog"
+							],
+							"path": [
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "140"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8c-yWT25Z785gcHrmLmjxGi6g7lnr4\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 02:30:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Blog operation successful!\",\n    \"data\": {\n        \"acknowledged\": true,\n        \"modifiedCount\": 1,\n        \"upsertedId\": null,\n        \"upsertedCount\": 0,\n        \"matchedCount\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "image upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/imdee/Downloads/Default_Beautiful_black_strong_man_With_your_mind_calm_and_cen_3.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}upload",
+					"host": [
+						"{{host}}upload"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "image upload",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/imdee/Downloads/Default_Beautiful_black_strong_man_With_your_mind_calm_and_cen_3.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}upload",
+							"host": [
+								"{{host}}upload"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "97"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"61-T8Njx4tK2HmlhROi2XxdiywsBGo\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 25 Jul 2024 02:20:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Logged in success!\",\n    \"data\": {\n        \"path\": \"public/image/66a1b6821b4f6bb7b0e38f0eimage.jpg\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

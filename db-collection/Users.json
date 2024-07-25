@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "66a1af974bb2e8859bc30c39"
+  },
+  "name": "deep",
+  "email": "deep@gmail.com",
+  "password": "7dceb4191c2fcd565669cb86a72198fd:edca5426495bf8261a34fa21f94a93dd513815d00011b62085dd8d936b64112749ee6f62bdb4d2ef922d251be697431d423d7ccc35ca7cf12361dcd86d71f0b0",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1721872279334"
+    }
+  },
+  "lastLogin": {
+    "$date": {
+      "$numberLong": "1721887123207"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "66a1e3a15a0db4be30b74568"
+  },
+  "name": "deep",
+  "email": "deep2@gmail.com",
+  "password": "cc5c315ab6d273c8d0973b46e4d87260:00d5881d81e2e5df1107be2823aa74da2c2c47edad6138356c83b151181900eb1cd16b2b878994fba42537519751d5faa5f002986371da5abf4834e2d1f7c9c4",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1721885601113"
+    }
+  },
+  "lastLogin": {
+    "$date": {
+      "$numberLong": "1721885637417"
+    }
+  }
+}]
